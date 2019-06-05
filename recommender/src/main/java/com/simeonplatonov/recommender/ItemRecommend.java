@@ -7,22 +7,15 @@ package com.simeonplatonov.recommender;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
-
-import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
@@ -46,7 +39,7 @@ public class ItemRecommend {
         System.out.println("Enter a beer id:");
         long inputId = Long.parseLong(sc.nextLine());
         
-        int i = 0;
+
         for(LongPrimitiveIterator items = dm.getItemIDs();items.hasNext();){
             long itemId = items.nextLong();
             if(itemId==inputId){
@@ -54,13 +47,9 @@ public class ItemRecommend {
                 for(RecommendedItem recommendation:recommendations){
                     System.out.println(recommendation);
                 }
-            }
-               
+            }       
         }
-        
+        sc.close();  
     }
-    
-  
- 
-    
+
 }
