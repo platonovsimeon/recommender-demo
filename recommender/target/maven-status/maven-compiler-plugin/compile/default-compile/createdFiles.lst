@@ -1,1 +1,5 @@
-com\simeonplatonov\recommender\ItemRecommend.class
+convert\RecommenderItem.class
+com\simeonplatonov\recommender\Main.class
+com\simeonplatonov\recommender\Recommender.class
+convert\DataConverter.class
+convert\DataConverter2.class
