@@ -46,19 +46,16 @@ public class DataConverter2 {
         RecommenderItem testItem1 = itemsToRecommend.get(0);
         RecommenderItem testItem2 = itemsToRecommend.get(1);
         RecommenderItem testItem3 = itemsToRecommend.get(2);
-        RecommenderItem testItem4 = itemsToRecommend.get(3);
-        testItem1.rate(1);
+        testItem1.rate(0);
         testItem2.rate(0);
-        testItem3.rate(0);
-        testItem4.rate(1);
+        testItem3.rate(1);
         ratedItems.add(testItem1);
         ratedItems.add(testItem2);
         ratedItems.add(testItem3);
-        ratedItems.add(testItem4);
         itemsToRecommend.remove(0);
         itemsToRecommend.remove(0);
         itemsToRecommend.remove(0);
-        itemsToRecommend.remove(0);
+  
         
         BufferedWriter writer = new BufferedWriter(new FileWriter("data/ratedItems.csv"));
         BufferedWriter writer2 = new BufferedWriter(new FileWriter("data/itemsToRecommend.csv"));
